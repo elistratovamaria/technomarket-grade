@@ -8,6 +8,7 @@
   --deep-green: #518534;
   --light-grey: #eaeaea;
   --basic-grey: #3d546f;
+  --grey-blackberry: #405069;
   --basic-greylight: #c5c5c5;
   --basic-background: #f1f5f7;
   --light-grey-background: #f3f7f9;
@@ -154,6 +155,7 @@ img {
   background-image: url(../images/icon-phone.svg);
   background-repeat: no-repeat;
   background-position: 0 50%;
+  background-size: 16px 16px;
 }
 
 .main-header-top-phone:hover {
@@ -178,12 +180,146 @@ img {
   width: 220px;
   height: 50px;
   padding: 12px 57px 20px 55px;
-  background: var(--basic-red);
+  background-color: var(--basic-red);
   box-shadow: inset 0 -5px 0 var(--black-opacity-0-24);
 }
+
+.logo:hover {
+  background-color: var(--dark-red);
+}
+
+.logo:active {
+  background-color: var(--special-red);
+}
+
+.main-header-middle-search {
+  position: relative;
+}
+
+.search-input {
+  min-width: 717px;
+  height: 100%;
+  max-height: 45px;
+  padding: 9px 53px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  background-color: transparent;
+  border: none;
+}
+
+.search-input::placeholder {
+  color: var(--white);
+}
+
+.search-input:not(:placeholder-shown),
+.search-input:focus {
+  background-color: var(--basic-background);
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-input:not(:placeholder-shown) ~ .cross-search {
+  position: absolute;
+  right: 17px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background-image: url(../images/cross-close-search.svg);
+  transform: translateY(-50%);
+}
+
+.search-input-img {
+  position: absolute;
+  left: 21px;
+  top: 50%;
+  color: var(--white);
+  opacity: 0.3;
+  transform: translateY(-50%);
+}
+
+.search-input:not(:placeholder-shown) + .search-input-img,
+.search-input:focus + .search-input-img {
+  color: var(--grey-blackberry);
+  opacity: 1;
+}
+
+.main-header-middle-wrapper {
+  max-height: 45px;
+  margin-left: auto;
+}
+
+.main-header-middle-login {
+  display: flex;
+  align-items: center;
+}
+
+.main-header-middle-login-link {
+  display: block;
+  max-width: 100px;
+  padding-left: 26px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--basic-background);
+  background-image: url(../images/icon-login.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.main-header-middle-login-link:hover {
+  opacity: 0.7;
+}
+
+.main-header-middle-login-link:active {
+  opacity: 0.5;
+}
+
+.main-header-middle-logout {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.main-header-middle-logout-link {
+  display: block;
+  padding-left: 25px;
+  color: var(--basic-background);
+  text-decoration: none;
+  background-image: url(../images/icon-user.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+
+.main-header-middle-logout-link:hover {
+  opacity: 0.7;
+}
+
+.main-header-middle-logout-link:active {
+  opacity: 0.5;
+}
+
+.main-header-middle-login-link-active {
+  display: block;
+  width: 16px;
+  height: 16px;
+  padding-left: 0;
+  background-image: url(../images/icon-logout.svg);
+  background-repeat: no-repeat;
+}
+
 
 /*Popover*/
 
 .popover-login {
+  display: none;
+}
+
+.popover-profile {
   display: none;
 }
