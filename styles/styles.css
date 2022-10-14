@@ -17,6 +17,7 @@
   --white: #ffffff;
   --black: #000000;
   --black-opacity-0-24: rgba(0, 0, 0, 0.24);
+  --black-opacity-0-15: rgba(0, 0, 0, 0.15);
   --beige: #f9f5f0;
   --dark-beige: #f7f3ec;
   --special-red: #ba2732;
@@ -111,6 +112,100 @@ img {
   margin: 0 auto;
 }
 
+/*Input*/
+
+.input {
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--basic-grey);
+  background-color: transparent;
+  border: 1px solid var(--basic-grey);
+  border-radius: 2px;
+}
+
+.input::placeholder {
+  color: var(--basic-greylight);
+}
+
+.input:hover {
+  border-color: var(--basic-green);
+}
+
+.input:focus {
+  outline: 1px solid var(--special-yellow);
+}
+
+.input.error {
+  border-color: var(--basic-red);
+}
+
+.input:hover.error {
+  outline: 1px solid var(--basic-red);
+}
+
+.input:disabled {
+  background-color: var(--basic-background);
+  border-color: var(--basic-greylight);
+  opacity: 0.5;
+}
+
+/*Buttons*/
+
+.button {
+  padding: 11px 8px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.button-primary {
+  color: var(--white);
+  background-color: var(--basic-green);
+}
+
+.button-primary:hover {
+  background-color: var(--dark-green);
+}
+
+.button-primary:active {
+  background-color: var(--deep-green);
+}
+
+.button-secondary {
+  color: var(--white);
+  background-color: var(--basic-red);
+}
+
+.button-secondary:hover {
+  background-color: var(--dark-red);
+}
+
+.button-secondary:active {
+  background-color: var(--special-red);
+}
+
+.button-light {
+  color: var(--middle-grey);
+  background-color: var(--white);
+  border: 2px solid var(--basic-green);
+}
+
+.button-light:hover {
+  border-color: var(--basic-grey);
+}
+
+.button-light:active {
+  color: var(--basic-greylight);
+  border-color: var(--basic-greylight);
+}
+
 /*Header*/
 
 .main-header-top {
@@ -133,7 +228,7 @@ img {
 }
 
 .main-header-top-address {
-  max-width: 280px;
+  max-width: 290px;
   margin-right: 32px;
   font-style: normal;
   font-size: 14px;
@@ -247,6 +342,7 @@ img {
 }
 
 .main-header-middle-wrapper {
+  position: relative;
   max-height: 45px;
   margin-left: auto;
 }
@@ -313,13 +409,226 @@ img {
   background-repeat: no-repeat;
 }
 
-
 /*Popover*/
 
-.popover-login {
+.popover {
+  position: absolute;
+  top: 12px;
+  right: 0;
   display: none;
+  width: 360px;
+  padding: 22px 29px 35px 31px;
+  background-color: var(--white);
+  box-shadow: 0 8px 20px var(--black-opacity-0-15);
+  border-radius: 2px;
 }
 
 .popover-profile {
-  display: none;
+  padding-bottom: 33px;
+}
+
+.main-header-middle-login-link:hover + .popover-login,
+.popover-login:hover,
+.popover-login:focus-within {
+  display: block;
+}
+
+.main-header-middle-logout-link:hover + .popover-profile,
+.popover-profile:hover,
+.popover-profile:focus-within {
+  display: block;
+}
+
+.popover-title {
+  margin: 0 0 43px 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.popover-profile-title {
+  margin-bottom: 39px;
+}
+
+.button-popover-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  background-image: url(../images/icon-close.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border:none;
+  cursor: pointer;
+}
+
+.button-popover-close:hover {
+  opacity: 0.7;
+}
+
+.button-popover-close:active {
+  opacity: 0.5;
+}
+
+.popover-login-input {
+  min-width: 300px;
+}
+
+.popover-login-input:not(:last-of-type) {
+  margin-bottom: 7px;
+}
+
+.popover-login-input:last-of-type {
+  margin-bottom: 12px;
+}
+
+.popover-login-link-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5px;
+  margin-bottom: 38px;
+}
+
+.control.popover-login-control {
+  padding-left: 30px;
+}
+
+.popover-login-link {
+  display: block;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--black);
+  text-decoration: none;
+}
+
+.popover-login-link:hover {
+  opacity: 0.7;
+}
+
+.popover-login-link:active {
+  opacity: 0.5;
+}
+
+.popover-login-buttons-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5px;
+}
+
+.popover-login-button {
+  padding-left: 44px;
+  background-image: url(../images/icon-login.svg);
+  background-repeat: no-repeat;
+  background-position: 24px 50%;
+}
+
+.popover-login-button-reg {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.popover-profile-link {
+  display: block;
+  margin-bottom: 23px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--basic-grey);
+}
+
+.popover-profile-link:hover {
+  opacity: 0.7;
+}
+
+.popover-profile-link:active {
+  opacity: 0.5;
+}
+
+.popover-profile-logout {
+  display: block;
+  max-width: 145px;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+/*Checkbox, radio*/
+
+.control {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+}
+
+.control-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.control-input:hover + .control-mark {
+  opacity: 0.6;
+}
+
+.control-input:active + .control-mark {
+  opacity: 0.3;
+}
+
+.control-input[type="checkbox"] + .control-mark {
+  background-image: url(../images/checkbox.svg);
+}
+
+.control-input[type="checkbox"]:checked + .control-mark {
+  background-image: url(../images/checkbox-checked.svg);
+}
+
+
+.control-input[type="radio"] + .control-mark {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--basic-grey);
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: var(--basic-grey);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  content: "";
+}
+
+.control-label {
+  display: block;
+  margin-bottom: 22px;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.control-input:disabled ~ .control-label {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.control-input:disabled + .control-mark {
+  opacity: 0.2;
+  pointer-events: none;
 }
