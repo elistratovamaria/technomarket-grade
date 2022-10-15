@@ -692,6 +692,7 @@ img {
   min-height: 180px;
   padding: 20px 37px 33px 25px;
   color: var(--white);
+  overflow: hidden;
 }
 
 .promo-item-materials {
@@ -789,13 +790,16 @@ img {
   background-image: url(../images/slide-perforator.jpg);
 }
 
-.slider-title {
-  margin: 0 0 10px 0;
+.title {
   font-family: "Fira Sans";
   font-weight: 700;
   font-size: 36px;
   line-height: 42px;
   text-transform: uppercase;
+}
+
+.slider-title {
+  margin: 0 0 10px 0;
   color: var(--white);
 }
 
@@ -891,6 +895,179 @@ img {
   text-align: center;
 }
 
+.new::before {
+  content: "new";
+  position: absolute;
+  right: -25px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--basic-red);
+  transform: rotate(45deg);
+}
+
+/*Catalog*/
+
+.catalog-title {
+  margin: 0 0 26px 0;
+}
+
+.catalog-wrapper {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  column-gap: 80px;
+}
+
+.catalog-filter-group {
+  margin: 0 0 34px 0;
+  padding: 0;
+  border: none;
+}
+
+.catalog-filter-group:last-of-type {
+  margin-bottom: 45px;
+}
+
+.catalog-filter-legend {
+  margin-bottom: 18px;
+  padding: 0;
+  font-weight: 700;
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.catalog-filter-legend-range {
+  margin-bottom: 10px;
+}
+
+.catalog-filter-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.catalog-cards {
+  padding-top: 30px;
+}
+
+.filter-button {
+  width: 100%;
+  background-color: var(--white);
+  color: var(--middle-grey);
+  border: 2px solid var(--basic-grey);
+}
+
+.filter-button:hover {
+  opacity: 0.7;
+}
+
+.filter-button:active {
+  opacity: 0.5;
+}
+
+/*Range*/
+
+.range-scale-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 40px;
+  margin-bottom: 6px;
+  background-color: var(--dark-beige);
+  border-radius: 4px;
+}
+
+.range-scale {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: 180px;
+  height: 2px;
+  background-color: var(--basic-grey);
+}
+
+.range-bar {
+  position: absolute;
+  height: 2px;
+  background-color: var(--dark-green);
+}
+
+.range-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--white);
+  border: 2px solid var(--basic-grey);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-toggle:hover {
+  background-color: var(--deep-green);
+}
+
+.range-toggle:active {
+  background-color: var(--dark-green);
+}
+
+.range-toggle:disabled {
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.toggle-min {
+  top: -9px;
+  left: 0;
+}
+
+.toggle-max {
+  top: -9px;
+  right: -10px;
+}
+
+.range-wrapper-inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 220px;
+}
+
+.range-input {
+  max-width: 95px;
+  padding: 10px 6px 12px 6px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: var(--dark-grey);
+  background-color: var(--dark-beige);
+  border: none;
+}
+
+.range-input:hover {
+  opacity: 0.7;
+}
+
+.range-input-space {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--dark-grey);
+}
+
+.range-input:disabled {
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+
 /*Checkbox, radio*/
 
 .control {
@@ -962,4 +1139,12 @@ img {
 .control-input:disabled + .control-mark {
   opacity: 0.2;
   pointer-events: none;
+}
+
+/*Product*/
+
+.product-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
