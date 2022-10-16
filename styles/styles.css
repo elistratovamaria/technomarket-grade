@@ -169,6 +169,10 @@ img {
   cursor: pointer;
 }
 
+.button:disabled {
+  opacity: 0.1;
+}
+
 .button-primary {
   color: var(--white);
   background-color: var(--basic-green);
@@ -845,7 +849,7 @@ input.error + .error-message {
 }
 
 .title {
-  font-family: "Fira Sans";
+  font-family: "Fira Sans", sans-serif;
   font-weight: 700;
   font-size: 36px;
   line-height: 42px;
@@ -1381,7 +1385,7 @@ input.error + .error-message {
 
 .pagination-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fit, 50px);
   gap: 8px;
   min-width: 225px;
   margin: 0 17px 0 0;
@@ -1537,6 +1541,10 @@ input.error + .error-message {
   margin: 0 0 28px 0;
 }
 
+.contacts-img {
+  background-color: var(--basic-light-grey);
+}
+
 /*Footer*/
 
 .footer-info {
@@ -1683,6 +1691,10 @@ input.error + .error-message {
 
 .mailing-button:active {
   background-color: var(--deep-green);
+}
+
+.mailing-button:disabled {
+  opacity: 0.1;
 }
 
 .footer-copyright {
