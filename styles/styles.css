@@ -1284,8 +1284,9 @@ input.error + .error-message {
   position: absolute;
   top: 40%;
   left: 55%;
-  display: none;
+  opacity: 0;
   transform: translate(-55%, -40%);
+  z-index: 2;
 }
 
 .price-button {
@@ -1344,9 +1345,15 @@ input.error + .error-message {
   box-shadow: 0 8px 20px var(--black-opacity-0-15);
 }
 
-.product-item:hover .product-buttons-wrapper {
+.product-item:hover .product-buttons-wrapper,
+.product-buttons-wrapper:focus-within {
   display: flex;
   flex-direction: column;
+  opacity: 1;
+}
+
+.product-buttons-wrapper:focus-within + .product-img {
+  opacity: 0.1;
 }
 
 .img-wrapper {
